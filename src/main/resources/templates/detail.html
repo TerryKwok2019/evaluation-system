@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>老师详情页面</title>
+</head>
+<style>
+.left{
+float:left;
+}
+.right{
+float:left;
+margin-left:50px;
+margin-top:30px;
+}
+</style>
+<body>
+<div class="left">
+	<img th:src="${teacher.img}"></img>
+</div>
+
+<div class="right">
+	<p><span>姓名：</span><span th:text="${teacher.teacherName}"></span></p>
+	<p><span>年龄：</span><span  th:text="${teacher.age}"></span></p>
+	<p><span>任课专业：</span><span th:text="${teacher.classroom}"></span></p>
+	<a th:href="'startEva?questionId='+1"><span>开始评教</span></a>
+</div>
+</body>
+</html>

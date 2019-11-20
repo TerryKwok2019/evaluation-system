@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.score {
+	margin-top: -100px;
+	margin-left: 600px;
+	width: 500px;
+	height:300px;
+	text-align:center;
+	border: 1px gray solid;
+}
+</style>
+<body>
+	<div class="score">
+			<div th:each="score:${scores}" style="margin-top:30px">
+			 <span>老师姓名：</span><span th:text="${score.teacherName}"></span><br>
+			 <span>总&nbsp;&nbsp;得&nbsp;&nbsp;分：</span><span th:text="${score.score}"></span><br>
+			 <span>评&nbsp;&nbsp;分&nbsp;&nbsp;人：</span><span th:text="${score.stuName}"></span><br>
+			</div>
+			<div style="margin-top:30px">
+				<p>～～大结局～～</p>
+			</div>
+	</div>
+</body>
+</html>

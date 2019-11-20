@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>评教系统登录</title>
+
+
+</head>
+<style>
+.centry{
+margin-top:300px;
+margin-left:550px;
+}
+</style>
+<body>
+<div class="centry">
+	<form method="POST" action="login" name="myform"onsubmit="return checkdata()">
+		<p>
+			<span style="font-size: 9pt">用 户 名:<input type="text"
+				name="userName" placeholder="请输入用户名"></span>
+		</p>
+		<p>
+			<span style="font-size: 9pt">密&nbsp; &nbsp; 码:<input
+				type="password" name="password" size="20" placeholder="请输入密码"></span>
+		</p>
+				<button type="submit">登录</button>&nbsp;&nbsp;&nbsp;
+				<button type="reset">重置</button>
+	</form>
+	</div>
+	<script>
+		function checkdata() {
+			var x = document.forms["myform"]["userName"].value;
+			var y = document.forms["myform"]["password"].value;
+			if (x == "") {
+				window.alert("请输入用户名！");
+				return false;
+			}
+			if (y == "") {
+				window.alert("请输入密码！");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>

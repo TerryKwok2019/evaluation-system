@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>教学评价</title>
+</head>
+<body>
+
+<table>
+			<tr>
+				<th></th>
+			</tr>
+			<tr th:each="teacher:${teachers.list}">
+				<td><a th:href="'detail?teacherId='+${teacher.teacherId}" th:text="${teacher.teacherName}"></a></td>
+			</tr>
+		</table>
+<p>
+			当前 <span th:text="${teachers.pageNum}"></span> 页,
+			总 <span th:text="${teachers.pages}"></span> 页,
+			共 <span th:text="${teachers.total}"></span>条记录
+		</p>
+		<a th:href="@{/getTeachers}">首页</a> 
+		<a th:href="@{/getTeachers(pageNum=${teachers.hasPreviousPage}?${teachers.prePage}:1)}">上一页</a>
+		<a th:href="@{/getTeachers(pageNum=${teachers.hasNextPage}?${teachers.nextPage}:${teachers.pages})}">下一页</a>
+		<a th:href="@{/getTeachers(pageNum=${teachers.pages})}">尾页</a>
+</body>
+</html>
